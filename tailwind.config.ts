@@ -9,8 +9,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
         foreground: "var(--foreground)",
+        dark: {
+          default: "var(--dark-default)",
+          dark: "var(--dark-dark)",
+        },
+        text: {
+          default: "var(--text-default)",
+          info: "var(--text-info)",
+          active: "var(--text-active)",
+          muted: "var(--text-muted)",
+        }
+      },
+      transitionDuration: {
+        350: "350ms",
       },
     },
   },
