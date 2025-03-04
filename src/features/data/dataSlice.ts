@@ -1,7 +1,12 @@
+'use client'
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchData = createAsyncThunk('data/fetchData', async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const response = await fetch('/portfolio');
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
   return response.json();
 });
 

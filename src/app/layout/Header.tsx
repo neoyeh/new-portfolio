@@ -47,7 +47,7 @@ export default function Header() {
                   p-2.5 text-sm font-light block w-full text-center relative
                   group hover:text-text-active
                 `}>
-                  <FontAwesomeIcon icon={link.icon} fixedWidth size="2x" className={`
+                  <FontAwesomeIcon style={{ width: "19px"}} icon={link.icon} fixedWidth className={`
                     text-[22px] absolute left-1/2 top-1/2 
                     transform -translate-x-1/2 -translate-y-1/2 transition-all duration-350 ease-out
                     group-hover:opacity-40 group-hover:-translate-x-[75%] group-hover:-translate-y-[50%]
