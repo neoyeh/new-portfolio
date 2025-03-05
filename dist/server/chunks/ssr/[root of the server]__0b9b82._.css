@@ -313,6 +313,14 @@ img, video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.inset-0 {
+  inset: 0;
+}
+
 .bottom-0 {
   bottom: 0;
 }
@@ -329,6 +337,14 @@ img, video {
   top: auto;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
 .my-2\.5 {
   margin-top: .625rem;
   margin-bottom: .625rem;
@@ -342,12 +358,24 @@ img, video {
   display: flex;
 }
 
+.h-\[185px\] {
+  height: 185px;
+}
+
 .h-\[55px\] {
   height: 55px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-0 {
   min-height: 0;
+}
+
+.w-\[45px\] {
+  width: 45px;
 }
 
 .w-\[55px\] {
@@ -356,6 +384,10 @@ img, video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-none {
+  flex: none;
 }
 
 .flex-shrink-0 {
@@ -394,8 +426,33 @@ img, video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.gap-\[12px\] {
+  gap: 12px;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.bg-\[\#0f221d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 34 29 / var(--tw-bg-opacity, 1));
 }
 
 .bg-dark-dark {
@@ -406,12 +463,32 @@ img, video {
   padding: .625rem;
 }
 
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
+
+.pb-\[53px\] {
+  padding-bottom: 53px;
+}
+
+.pr-\[25px\] {
+  padding-right: 25px;
+}
+
+.pt-\[40px\] {
+  padding-top: 40px;
+}
+
 .text-center {
   text-align: center;
 }
 
 .text-\[22px\] {
   font-size: 22px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
 }
 
 .text-sm {
@@ -460,6 +537,18 @@ img, video {
 
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, .2, 1);
+}
+
+.\[background\:linear-gradient\(165deg\,\#0f221d_0\%\,\#0f221d_35\%\,rgba\(0\,0\,0\,0\)_85\%\)\] {
+  background: linear-gradient(165deg, #0f221d 0% 35%, #0000 85%);
+}
+
+.\[text-orientation\:upright\] {
+  text-orientation: upright;
+}
+
+.\[writing-mode\:vertical-lr\] {
+  writing-mode: vertical-lr;
 }
 
 :root {
@@ -532,6 +621,26 @@ body {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:gap-0 {
+    gap: 0;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0;
+  }
+
+  .md\:pl-\[80px\] {
+    padding-left: 80px;
+  }
+
+  .md\:pr-0 {
+    padding-right: 0;
   }
 }
 

@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header>
       <nav className="
-        fixed 
+        fixed z-50
         flex flex-col justify-center
         bg-dark-dark
         w-full h-[55px] min-h-0 top-auto bottom-0
@@ -32,18 +32,18 @@ export default function Header() {
         md:top-0 md:left-0 md:bottom-auto
       ">
         <ul className="
-          flex flex-row
-          md:flex-column
+          flex flex-row gap-[12px]
+          md:flex-col md:gap-0
         ">
-          <li className="
-            flex-shrink-0 my-2.5
-            w-[55px]
-            md:w-full
-          ">
-            {linkList.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link key={link.text} href={link.href} className={`${isActive ? 'text-text-active' : 'text-text-muted'}
+          {linkList.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={link.text} className="
+                flex-shrink-0 my-2.5
+                w-[55px]
+                md:w-full
+              ">
+                <Link href={link.href} className={`${isActive ? 'text-text-active' : 'text-text-muted'}
                   p-2.5 text-sm font-light block w-full text-center relative
                   group hover:text-text-active
                 `}>
@@ -58,10 +58,10 @@ export default function Header() {
                     group-hover:opacity-100 group-hover:translate-x-[10%]
                     ${isActive ? 'opacity-100 translate-x-[10%]' : ''}
                   `}>{link.text}</span>  
-                </Link> 
+                </Link>
+              </li>
             );
-            })}
-          </li> 
+          })}
         </ul>
       </nav>
     </header>

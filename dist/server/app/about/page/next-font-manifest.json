@@ -1,0 +1,12 @@
+{
+  "pages": {},
+  "app": {
+    "[project]/src/app/about/page": [
+      "static/media/_nF7OG829Oofr2wohFbTp9i1OCEKIfVZ1w-s.p.cb8c60e5.woff2",
+      "static/media/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBHMdazQ-s.p.a797655c.woff2",
+      "static/media/fC1MPZJEZG_e9gHhdI4_NBbfd2ys3SjJCx12wPgf9g__3F0YdVE8FFkwSDH92ZWI0g-s.p.fd3e3961.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pagesUsingSizeAdjust": false
+}

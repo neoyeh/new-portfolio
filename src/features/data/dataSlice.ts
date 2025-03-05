@@ -1,9 +1,7 @@
-'use client'
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchData = createAsyncThunk('data/fetchData', async () => {
-  const response = await fetch('/portfolio');
+  const response = await fetch('https://neoyeh.github.io/neo-portfolio/dist/portfolio.json');
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -11,19 +9,26 @@ export const fetchData = createAsyncThunk('data/fetchData', async () => {
 });
 
 type Post = {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+  years: string;
+  protfolio_list: {
+    hidden?: boolean;
+    project_name: string;
+    text: string;
+    image: string;
+    link_live?: string;
+    link_github?: string;
+  }[];
+};
+
+const initialState: { projects: Post[]; loading: boolean; error: string | null } = {
+  projects: [],
+  loading: false,
+  error: null,
 };
 
 const dataSlice = createSlice({
   name: 'data',
-  initialState: {
-    items: [] as Post[],
-    loading: false,
-    error: null as string | null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -33,7 +38,7 @@ const dataSlice = createSlice({
       })
       .addCase(fetchData.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.projects = action.payload;
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.loading = false;

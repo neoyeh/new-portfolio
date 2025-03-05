@@ -10,22 +10,22 @@ __turbopack_esm__({
     "fetchData": (()=>fetchData)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_import__("[project]/node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs [app-client] (ecmascript) <locals>");
-'use client';
 ;
 const fetchData = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createAsyncThunk"])('data/fetchData', async ()=>{
-    const response = await fetch('/portfolio');
+    const response = await fetch('https://neoyeh.github.io/neo-portfolio/dist/portfolio.json');
     if (!response.ok) {
         throw new Error('Failed to fetch data');
     }
     return response.json();
 });
+const initialState = {
+    projects: [],
+    loading: false,
+    error: null
+};
 const dataSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$reduxjs$2f$toolkit$2f$dist$2f$redux$2d$toolkit$2e$modern$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createSlice"])({
     name: 'data',
-    initialState: {
-        items: [],
-        loading: false,
-        error: null
-    },
+    initialState,
     reducers: {},
     extraReducers: (builder)=>{
         builder.addCase(fetchData.pending, (state)=>{
@@ -33,7 +33,7 @@ const dataSlice = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modul
             state.error = null;
         }).addCase(fetchData.fulfilled, (state, action)=>{
             state.loading = false;
-            state.items = action.payload;
+            state.projects = action.payload;
         }).addCase(fetchData.rejected, (state, action)=>{
             state.loading = false;
             state.error = action.error.message || 'Error fetching data';
@@ -186,14 +186,14 @@ function Header() {
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-            className: " fixed  flex flex-col justify-center bg-dark-dark w-full h-[55px] min-h-0 top-auto bottom-0 md:w-[80px] md:h-full md:min-h-[500px] md:top-0 md:left-0 md:bottom-auto ",
+            className: " fixed z-50 flex flex-col justify-center bg-dark-dark w-full h-[55px] min-h-0 top-auto bottom-0 md:w-[80px] md:h-full md:min-h-[500px] md:top-0 md:left-0 md:bottom-auto ",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                className: " flex flex-row md:flex-column ",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                    className: " flex-shrink-0 my-2.5 w-[55px] md:w-full ",
-                    children: linkList.map((link)=>{
-                        const isActive = pathname === link.href;
-                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                className: " flex flex-row gap-[12px] md:flex-col md:gap-0 ",
+                children: linkList.map((link)=>{
+                    const isActive = pathname === link.href;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                        className: " flex-shrink-0 my-2.5 w-[55px] md:w-full ",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             href: link.href,
                             className: `${isActive ? 'text-text-active' : 'text-text-muted'}
                   p-2.5 text-sm font-light block w-full text-center relative
@@ -230,17 +230,17 @@ function Header() {
                                     columnNumber: 19
                                 }, this)
                             ]
-                        }, link.text, true, {
+                        }, void 0, true, {
                             fileName: "[project]/src/app/layout/Header.tsx",
                             lineNumber: 46,
                             columnNumber: 17
-                        }, this);
-                    })
-                }, void 0, false, {
-                    fileName: "[project]/src/app/layout/Header.tsx",
-                    lineNumber: 38,
-                    columnNumber: 11
-                }, this)
+                        }, this)
+                    }, link.text, false, {
+                        fileName: "[project]/src/app/layout/Header.tsx",
+                        lineNumber: 41,
+                        columnNumber: 15
+                    }, this);
+                })
             }, void 0, false, {
                 fileName: "[project]/src/app/layout/Header.tsx",
                 lineNumber: 34,

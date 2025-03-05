@@ -313,12 +313,24 @@ img, video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
+.inset-0 {
+  inset: 0;
+}
+
 .bottom-0 {
   bottom: 0;
 }
 
 .left-1\/2 {
   left: 50%;
+}
+
+.top-0 {
+  top: 0;
 }
 
 .top-1\/2 {
@@ -329,9 +341,21 @@ img, video {
   top: auto;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
 .my-2\.5 {
   margin-top: .625rem;
   margin-bottom: .625rem;
+}
+
+.mb-\[15px\] {
+  margin-bottom: 15px;
 }
 
 .block {
@@ -342,12 +366,28 @@ img, video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
+.h-\[185px\] {
+  height: 185px;
+}
+
 .h-\[55px\] {
   height: 55px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-0 {
   min-height: 0;
+}
+
+.w-\[45px\] {
+  width: 45px;
 }
 
 .w-\[55px\] {
@@ -356,6 +396,14 @@ img, video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-\[1_1_auto\] {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
 }
 
 .flex-shrink-0 {
@@ -394,8 +442,36 @@ img, video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.gap-\[12px\] {
+  gap: 12px;
+}
+
+.gap-\[15px\] {
+  gap: 15px;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .bg-dark-dark {
@@ -406,12 +482,44 @@ img, video {
   padding: .625rem;
 }
 
+.p-\[20px_15px_50px\] {
+  padding: 20px 15px 50px;
+}
+
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
+
+.pb-\[53px\] {
+  padding-bottom: 53px;
+}
+
+.pr-\[25px\] {
+  padding-right: 25px;
+}
+
+.pt-\[40px\] {
+  padding-top: 40px;
+}
+
+.pb-\[4px\] {
+  padding-bottom: 4px;
+}
+
+.pt-\[15px\] {
+  padding-top: 15px;
+}
+
 .text-center {
   text-align: center;
 }
 
 .text-\[22px\] {
   font-size: 22px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
 }
 
 .text-sm {
@@ -431,6 +539,10 @@ img, video {
   color: var(--text-muted);
 }
 
+.text-text-info {
+  color: var(--text-info);
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -446,6 +558,10 @@ img, video {
 
 .opacity-40 {
   opacity: .4;
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all {
@@ -476,6 +592,85 @@ body {
   font-family: var(--font-noto-sans-tc), var(--font-roboto), sans-serif;
   color: var(--foreground);
   background: var(--dark-default);
+}
+
+.font-bigShoulders {
+  font-family: var(--font-big-shoulders-display);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-weight: 600;
+}
+
+.protfolio-card {
+  display: flex;
+  position: relative;
+  width: 25%;
+}
+
+@media screen and (width <= 1365px) {
+  .protfolio-card {
+    width: 25%;
+  }
+}
+
+@media screen and (width <= 991px) {
+  .protfolio-card {
+    width: 33.3333%;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .protfolio-card {
+    width: 100%;
+  }
+}
+
+.image-block {
+  position: relative;
+  width: 100%;
+  height: 11vw;
+  height: calc(13.0345vw - 31.25px);
+  overflow: hidden;
+  flex: none;
+}
+
+@media screen and (width <= 991px) {
+  .image-block {
+    height: 14.5vw;
+  }
+}
+
+@media screen and (width <= 767px) {
+  .image-block {
+    height: 45vw;
+    height: calc(57.74vw - 70px);
+  }
+}
+
+.image-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all .15s ease-in-out;
+}
+
+.image-block:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000b3;
+  transition: all .25s ease-in;
+  z-index: 1;
+}
+
+@media screen and (width <= 767px) {
+  .image-block:before {
+    display: none;
+  }
 }
 
 .hover\:text-text-active:hover {
@@ -518,6 +713,10 @@ body {
     top: 0;
   }
 
+  .md\:mb-0 {
+    margin-bottom: 0;
+  }
+
   .md\:h-full {
     height: 100%;
   }
@@ -532,6 +731,30 @@ body {
 
   .md\:w-full {
     width: 100%;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:gap-0 {
+    gap: 0;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0;
+  }
+
+  .md\:pl-\[80px\] {
+    padding-left: 80px;
+  }
+
+  .md\:pr-0 {
+    padding-right: 0;
+  }
+
+  .md\:pt-\[12px\] {
+    padding-top: 12px;
   }
 }
 
