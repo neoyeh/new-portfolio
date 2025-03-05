@@ -11,7 +11,6 @@ export default function About() {
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
-  console.log(items)
   return (
     <div>
       <h1>Count: {count}</h1>
