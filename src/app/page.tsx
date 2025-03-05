@@ -2,7 +2,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks';
 import { fetchData } from '../features/data/dataSlice';
-import Link from 'next/link';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +13,7 @@ const gitlinkbuild = (data: string | string[] | null | undefined ) => {
 
   if (Array.isArray(data) && data.length) {
     return data.map((link, index) => (
-      <Link
+      <a
         href={link}
         key={index}
         className="
@@ -24,13 +23,13 @@ const gitlinkbuild = (data: string | string[] | null | undefined ) => {
         rel="nofollow noopener noreferrer"
       >
         <FontAwesomeIcon icon={faGithub} fixedWidth className="text-[20px]" />
-      </Link>
+      </a>
     ));
   }
 
   if (typeof data === "string") {
     return (
-      <Link
+      <a
         href={data}
         className="
           flex flex-end text-text-info transition-colors duration-[250ms]
@@ -40,7 +39,7 @@ const gitlinkbuild = (data: string | string[] | null | undefined ) => {
         rel="nofollow noopener noreferrer"
       >
         <FontAwesomeIcon icon={faGithub} fixedWidth className="text-[20px]" />
-      </Link>
+      </a>
     );
   }
 
@@ -54,7 +53,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
-  
+
   return (
     <div className="
       flex flex-wrap w-full pr-[25px]
@@ -107,7 +106,7 @@ export default function Home() {
                               flex w-full pt-[15px] gap-[12px]
                             ">
                               {card.link_live && (
-                                <Link
+                                <a
                                   href={card.link_live}
                                   className="
                                     flex flex-end text-text-info transition-colors duration-[250ms]
@@ -119,7 +118,7 @@ export default function Home() {
                                   <FontAwesomeIcon icon={faDesktop} fixedWidth className="
                                     text-[20px]
                                   " />
-                                </Link>
+                                </a>
                               )}
                               {gitlinkbuild(card.link_github)}
                             </div>
